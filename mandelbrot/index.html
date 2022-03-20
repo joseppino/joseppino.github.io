@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandelbrot</title>
+</head>
+<body>
+  <script>
+    const myCanvas = document.createElement("canvas");
+    myCanvas.width=600;
+    myCanvas.height=600;
+    document.body.appendChild(myCanvas);
+    const ctx = myCanvas.getContext("2d");
+  </script>
+  <script src="js/mandelbrot.js"></script>
+  <br>
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <div id="magFactor-controls">
+      <button id="magFactor_minus" name="magFactor_minus" type="button">-</button>
+      <label id="magFactor-plus-label" for="magFactor_plus">Magnification Factor (200)</label>
+      <button id="magFactor_plus" name="magFactor_plus" type="button">+</button>
+    </div>
+    <div id="pan-x-controls">
+      <button id="pan_x_minus" name="pan_x_minus" type="button">-</button>
+      <label id="pan-x-label" for="pan_x_plus">Pan X (2.0)</label>
+      <button id="pan_x_plus" name="pan_x_plus" type="button">+</button>
+    </div>
+    <div id="pan-y-controls">
+      <button id="pan_y_minus" name="pan_y_minus" type="button">-</button>
+      <label id="pan-y-label" for="pan_y_plus">Pan Y (1.5)</label>
+      <button id="pan_y_plus" name="pan_y_plus" type="button">+</button>
+    </div>
+    <label for="accuracySlider">Accuracy (affects load speed): </label>
+    <input id="accuracySlider" type="range" name="accuracySlider" min="10" max="2000" value="100"/>
+  </div>
+  <script>
+    let magnificationFactor = 200;
+    let panX = 2;
+    let panY = 1.5;
+    let accuracy = 100;
+
+    const magFactorMinusBtn = document.querySelector("#magFactor_minus");
+    const magFactorPlusBtn = document.querySelector("#magFactor_plus");
+    const panXMinusBtn = document.querySelector("#pan_x_minus");
+    const panXPlusBtn = document.querySelector("#pan_x_plus");
+    const panYMinusBtn = document.querySelector("#pan_y_minus");
+    const panYPlusBtn = document.querySelector("#pan_y_plus");
+    const accuracySlider = document.querySelector("#accuracySlider");
+
+    magFactorMinusBtn.addEventListener("click", () => {
+      if(magnificationFactor - 50 > 0) {
+        magnificationFactor -= 50;
+        drawMandelbrot(accuracy);
+        document.querySelector("#magFactor-plus-label").innerText = `Magnification Factor (${magnificationFactor})`;
+      }
+    });
+
+    magFactorPlusBtn.addEventListener("click", () => {
+      if(magnificationFactor + 50 < 5000) {
+        magnificationFactor += 50;
+        drawMandelbrot(accuracy);
+        document.querySelector("#magFactor-plus-label").innerText = `Magnification Factor (${magnificationFactor})`;
+      }
+    });
+
+    panXMinusBtn.addEventListener("click", () => {
+      panX -= 0.1;
+      drawMandelbrot(accuracy);
+      if(panX >= 0){
+        document.querySelector("#pan-x-label").innerText = `Pan X (${panX.toString().slice(0, 3)})`;
+      } else {
+        document.querySelector("#pan-x-label").innerText = `Pan X (${panX.toString().slice(0, 4)})`; // accounting for minus symbol
+      }
+    });
+
+    panXPlusBtn.addEventListener("click", () => {
+      panX += 0.1;
+      drawMandelbrot(accuracy);
+      if(panX >= 0){
+        document.querySelector("#pan-x-label").innerText = `Pan X (${panX.toString().slice(0, 3)})`;
+      } else {
+        document.querySelector("#pan-x-label").innerText = `Pan X (${panX.toString().slice(0, 4)})`; // accounting for minus symbol
+      }
+    });
+
+    panYMinusBtn.addEventListener("click", () => {
+      panY += 0.1;
+      drawMandelbrot(accuracy);
+      if(panY >= 0){
+        document.querySelector("#pan-y-label").innerText = `Pan Y (${panY.toString().slice(0, 3)})`;
+      } else {
+        document.querySelector("#pan-y-label").innerText = `Pan Y (${panY.toString().slice(0, 4)})`; // accounting for minus symbol
+      }
+    });
+
+    panYPlusBtn.addEventListener("click", () => {
+      panY -= 0.1;
+      drawMandelbrot(accuracy);
+      if(panY >= 0){
+        document.querySelector("#pan-y-label").innerText = `Pan Y (${panY.toString().slice(0, 3)})`;
+      } else {
+        document.querySelector("#pan-y-label").innerText = `Pan Y (${panY.toString().slice(0, 4)})`; // accounting for minus symbol
+      }
+    });
+
+    accuracySlider.addEventListener("change", () => {
+      accuracy = parseInt(accuracySlider.value);
+      drawMandelbrot(accuracy);
+    });
+
+    drawMandelbrot();
+  </script>
+</body>
+</html>

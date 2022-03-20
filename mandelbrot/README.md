@@ -1,0 +1,1 @@
+A mandlebrot thingymajig done in js
