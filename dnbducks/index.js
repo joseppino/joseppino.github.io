@@ -9,17 +9,25 @@ const hatDuck = document.querySelector('#hat_duck');
 const cowbellDuck = document.querySelector('#cowbell_duck');
 
 kickDuck.addEventListener('click', () => {
-  kick.play();
+  let kickAudio = kick.cloneNode();
+  kickAudio.play();
+  kickAudio.remove();
 });
 
 snareDuck.addEventListener('click', () => {
-  snare.play();
+  let snareAudio = snare.cloneNode();
+  snareAudio.play();
+  snareAudio.remove();
 });
 
 hatDuck.addEventListener('click', () => {
-  hat.play();
+  let hatAudio = hat.cloneNode();
+  hatAudio.play();
+  hatAudio.remove();
 });
 
 cowbellDuck.addEventListener('click', () => {
-  cowbell.play();
+  let cowbellAudio = cowbell.cloneNode();
+  cowbellAudio.play();
+  cowbellAudio.remove();
 });
