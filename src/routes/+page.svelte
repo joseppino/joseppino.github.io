@@ -1,12 +1,12 @@
 <script lang="ts">
-    import { PUBLIC_SB_URL } from "$env/static/public";
+    import { env } from '$env/dynamic/public';
 
 </script>
 <!-- Main Page -->
 
 <div class="content">
 <h1>Joseph Lloyd</h1>
-<img src={`${PUBLIC_SB_URL}/storage/v1/object/public/photos/showcase/joe.png`} alt="">
+<img src={`${env.PUBLIC_SB_URL}/storage/v1/object/public/photos/showcase/joe.png`} alt="">
 <p>Hi! Welcome to my website.</p>
 </div>
 
