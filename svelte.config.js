@@ -5,7 +5,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			pages: 'build/',
-			fallback: 'index.html'
+			fallback: '404.html'
 		}),
 		paths: {
 			base: ''
