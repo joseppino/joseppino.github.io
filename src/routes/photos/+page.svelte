@@ -46,12 +46,8 @@
       return array;
     }
   
-    let photoURIs = fetchAllPhotoURIs();
-
-    $: console.log(photoURIs);
+    let photoURIs = fetchAllPhotoURIs();    
     
-    
-    // let slides = Array.from({ length: 10 }, (_, i) => i + 1);
     let slides = photoURIs;
   </script>
   
