@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../static/favicon.png" type="image/x-icon">
+  </head>
+  <body>
+    <nav>
+        <a href="/">Home</a>
+        <span>|</span>
+        <a href="/projects.html">Projects</a>
+        <span>|</span>
+        <a href="/writing">Writing</a>
+        <span>|</span>
+        <a href="#">Contact</a>
+    </nav>
+    <main>
+        <h1>Projects</h1>
+        <section>
+          <h2 style="margin-bottom: 0;">Cinelingo</h2>
+          <span><i>2023 - Decommissioned</i></span>
+          <p>A web application enhancing language education by providing native content suggestions to a student in their target language, based on the user's own tastes.</p>
+          <div><i>Svelte, Firebase, GCP</i></div>
+          <a href="https://github.com/joseppino/cinelingo">Repo link</a>
+        </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  span {
+    color: var(--secondary-color);
+  }
+
+  section {
+    width: 75vw;
+    max-width: 650px;
+    margin: 20px auto;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      width: 90vw;
+    }
+  }
+</style>
