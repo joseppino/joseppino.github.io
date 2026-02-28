@@ -21,8 +21,46 @@
     <main>
       <article>
         <h1>Going Back to Basics</h1>
-        <h3>26th February 2026</h3>
-        <p>In today's fast-paced world of technology, it's easy to get caught up in the latest trends and tools. However, sometimes it's important to take a step back and focus on the fundamentals. In this article, we'll explore the importance of going back to basics and how it can benefit both beginners and experienced professionals alike.</p>
+        <h3>28th February 2026</h3>
+        <p>
+          The web is a maelstrom of sort-of-useful frameworks and libraries being pumped out at a dizzying rate that serve to make one's life
+          easier when creating applications or websites. Personally, I have rewritten this site using Svelte, React, and Astro - for no good reason other
+          than as a skill-sharpening exercise such that the web developer section of my brain does not turn into mush. Hence, I feel like I have spent enough
+          time with web frameworks to know when they are useful and when they are overkill.
+        </p>
+        <p>
+          I have come to the conclusion that a vanilla approach using simple HTML & CSS, with as little
+          JavaScript as possible is by far the best way to build out a personal site for several reasons:
+        </p>
+        <ol>
+          <li>
+            Packaging only vanilla markup, static assets and scripts means you can take advantage of static deployment options,
+            such as Github/Cloudflare pages for <strong>free</strong> hosting.
+          </li>
+          <li>
+            Removing all of the abstractions offered by web frameworks allows you to reconnect with the original principles of the web
+            and what a website is actually supposed to be, which turns out to be far simpler than present convention would have you believe.
+          </li>
+          <li>
+            Simple markup sites load quicker than those that ship dozens of megabites in needless JavaScript.
+          </li>
+          <li>
+            Relying on only CSS to style the site inspires greater creativity and weakens the reliance on prepackaged libraries and the mess
+            that is Tailwind.
+          </li>
+        </ol>
+        <p>
+          It did occur to me that managing things like blog entries manually would be more challenging without using any sort of database or templating
+          functionality that a framework would provide. However, sometimes the most efficient way is not always best. I would prefer to write these entries
+          as .md's, but there's something pleasantly old-timey about just bashing out plain HTML. Just like the pioneers of old, back when a SPA was somewhere
+          you went for a massage and &lt;marquee&gt; was still cool.
+        </p>
+        <p>
+          Full disclosure: I love to write Svelte apps and I think the framework is fantastic, but there is something offensive about involving Vite or Webpack
+          to tree-shake my website that consists of 7 html files and a stylesheet. Maybe I am a curmudgeon and a luddite for thinking like this (and my outrage is decades too late), but it saddens me that
+          the web has become less about individuals sharing information on a site that they designed themselves and is now a contest to vibe-code the page with the most impressive scrolling SVG animations
+          that your grandma's 2009 dell optiplex has no hope of rendering before her tea gets cold.
+        </p>
       </article>
     </main>
     <script src="index.js"></script>
@@ -48,5 +86,9 @@
   h3 {
     color: var(--secondary-color);
     margin-top: 5px;
+  }
+
+  li {
+    padding: 5px;
   }
 </style>
