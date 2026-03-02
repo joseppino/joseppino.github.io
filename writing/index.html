@@ -20,14 +20,16 @@
     </nav>
     <main>
         <h1>Writing</h1>
-        <ul>
-            <li>
-              <div>
-              25th February 2026
-              </div>
-              <a href="/writing/back-to-basics.html">Going Back to Basics</a>
-            </li>
-        </ul>
+        <section>
+          <ul>
+              <li>
+                <div>
+                25th February 2026
+                </div>
+                <a href="/writing/back-to-basics.html">Going Back to Basics</a>
+              </li>
+          </ul>
+        </section>
     </main>
   </body>
 </html>
@@ -41,10 +43,22 @@
   ul {
     list-style-type: none;
     padding-left: 0;
-    width: 40vw;
+    /* width: 40vw; */
   }
 
   li {
     margin: 10px 0;
+  }
+
+  section {
+    width: 75vw;
+    max-width: 650px;
+    margin: 20px auto;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      width: 90vw;
+    }
   }
 </style>
